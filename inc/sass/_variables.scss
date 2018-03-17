@@ -1,0 +1,57 @@
+$blue:				#467cbf;
+$light-blue:		#42b4e3;
+$dark-blue:			#31307e;
+$green:				#40ae49;
+$dark-green:		#008345;
+$light-green:		#81bc41;
+$yellow-green:		#ccdb29;
+$light-yellow:		#fcdc00;
+$yellow:			#ffcd00;
+$orange:			#ed7623;
+$light-orange:		#f5a81c;
+$bright-red:		#e02828;
+$dark-red:			#b4292e;
+$red:				#cb2044;
+$pink: 				#e81d76;
+$violet:			#8e1e58;
+$fuschia:			#99298b;
+$purple:			#AF6EE2;
+$dark-purple:		#803c96;
+$teal:				#00a897;
+$grey: 				#9c9c9c;
+
+.bg--blue {background-color:$blue}
+.bg--light-blue {background-color:$light-blue}
+.bg--green {background-color:$green}
+.bg--yellow {background-color:$yellow}
+.bg--orange {background-color:$orange}
+.bg--red {background-color:$red}
+.bg--pink {background-color:$pink}
+.bg--purple {background-color:$purple}
+.bg--teal {background-color:$teal}
+
+
+$color--primary: 	$teal;
+$color--accent: 	$pink;
+
+$sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$theme-font: 'Abadi MT Condensed Light', 'Futura Condensed';
+
+%hues-clip {
+	background-image:url(inc/img/hues-colors-100-200.svg);
+	background-size:100vw auto;
+	color:black;
+	background-position:top center;
+	background-clip: text;
+	-webkit-background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+%hues-bg {
+	background-image:url(inc/img/hues-colors-100-200.svg);
+	background-size:cover;
+	background-position:top center;
+	background-repeat:no-repeat;
+}

@@ -1,0 +1,457 @@
+/*
+    Styles for every device
+*/
+
+body {
+	font-family:$sans-serif;
+}
+
+a {
+	color:$color--primary;
+}
+
+.button {
+	background-color:$color--accent;
+	font-family:$theme-font;
+	color:#fff;
+}
+
+::selection {
+	background:$color--primary;
+	color:#fff;
+}
+
+.woocommerce-store-notice {
+	background:$color--accent;
+	box-shadow:0px 0px 50px rgba(50,50,50,.25);
+	a {
+		text-decoration: none;
+		font-family:$theme-font;
+	}
+}
+
+/*****************************
+HEADER STYLES
+*****************************/
+#masthead {
+	background-image:url(inc/img/hues-colors-border.svg) !important;
+	background-repeat: repeat-x;
+	background-size:auto 45px;
+	background-position:center -40px;
+	background-color:rgba(200,200,200,.2);
+	padding:15px;
+	border-bottom:1px solid rgba(200,200,200,.3);
+
+	.col-full {
+		max-width:100%;
+		margin:0;
+		padding:0;
+	}
+
+	.site-branding {
+		.site-title {
+			a {
+				display:inline-block;
+				height:40px;
+				width:80px;
+				text-indent:-999999px;
+				overflow: hidden;
+				background-position: center;
+				background-image:url(inc/img/hues-store-logo.svg);
+				background-repeat:no-repeat;
+				background-size:contain;
+			}
+		}
+	}
+
+	button.menu-toggle {
+		border-color:$color--accent;
+		color:$color--accent;
+		&:before {color:$color--accent;}
+	}
+
+	#site-header-cart li {margin:0;}
+}
+
+#breadcrumbs {
+	padding:1em 0;
+	font-weight:300;
+	margin:0;
+
+	.fa {
+		margin:0 .2em;
+	}
+	a {
+		color:#000;
+		font-weight:100;
+		border-bottom:1px solid #000;
+
+		&:hover {
+			border-bottom:2px solid #000;
+		}
+	}
+}
+
+/*****************************
+PRODUCT STYLES
+*****************************/
+
+input[type=search] {
+	background:rgba(220,220,220,.1);
+	border-radius:4px;
+	box-shadow:0px 2px 3px rgba(100,100,100,.2);
+	border:1px solid rgba(100,100,100,.1);
+
+	&:focus {
+		background:#fff;
+		box-shadow:0px 2px 3px rgba(100,100,100,.5);
+	}
+}
+
+.single-product {
+	.content-area {
+		float: none;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	div.product .woocommerce-product-gallery img {
+		width:100%;
+		height:auto;
+	}
+
+	.single_add_to_cart_button {
+		background:$color--accent;
+
+		&:hover {
+			background:lighten($color--accent, 7%);
+		}
+		&:active {
+			background:darken($color--accent, 7%);
+			color:#000;
+		}
+	}
+}
+
+ul.products {
+	display:flex;
+	flex-direction:column;
+
+	li.product {
+		display:flex;
+		align-self:stretch;
+		justify-content: space-between;
+		text-align:left;
+		flex-direction:column;
+		background:rgba(0,0,0,.8);
+		overflow:hidden;
+		margin:0 0 20px;
+
+		a {
+			color:#fff;
+
+			img {
+				border-radius:0;
+				display:block;
+				width:100%;
+				height:auto;
+				margin:0 auto;
+			}
+
+			h2.woocommerce-loop-product__title {
+				color:rgba(255,255,255,.95);
+				font-weight:100;
+				margin:15px auto 5px;
+				padding:0 15px;
+			}
+
+			.price {
+				padding:0 15px;
+				color:#fff;
+			}
+
+			.onsale {
+				border:none;
+				background-color:$yellow;
+				font-family:$theme-font;
+				height:60px;
+				width:60px;
+				font-size:14px;
+				border-radius:50%;
+				text-align:center;
+				line-height:60px;;
+				margin:0;
+				color:#000;
+				font-size:.7em;
+				position:absolute;
+				top:2px;
+				right:2px;
+				box-shadow:0px 2px 2px rgba(0,0,0,.2);
+			}
+
+			&.button {
+				background:none;
+				font-weight:100;
+				font-size:.7em;
+				text-align:center;
+				text-transform:uppercase;
+				letter-spacing:.2em;
+				margin:0px !important;
+
+				&:hover {
+					background:$color--accent;
+				}
+			}
+
+			&.added_to_cart {text-align:center;background:rgba(200,200,200,.2)}
+		}
+	}
+}
+
+/*****************************
+CART STYLES
+*****************************/
+
+.storefront-handheld-footer-bar ul li.cart > a:before {content:'\f07a';}
+
+table.cart .button {background:#333; &:hover {color:#fff;background:$color--primary;}}
+table.cart .coupon .button {background:#ccc}
+
+.button.checkout-button, .place-order .button {
+	background:$color--accent;
+	color:#fff;
+
+	&:hover {background:lighten($color--accent, 10%);}
+}
+
+
+/*****************************
+NOTICE STYLES
+*****************************/
+
+.woocommerce-message {
+	background:$color--primary;
+}
+.woocommerce-info, .woocommerce-noreviews, p.no-comments {
+	background:$light-blue;
+}
+
+
+
+/*****************************
+HOME STYLES
+*****************************/
+
+#hero {
+	padding:6vw;
+
+	h1 {
+		@extend %hues-clip;
+		font-weight:900;
+		display: inline-block;
+		color:$color--primary;
+		margin:0;
+		text-transform:uppercase;
+		line-height:1.3;
+
+		/* Text Background (black zone) */
+		&:after {
+		    position: absolute;
+		    z-index: -1;
+		    top: .125em;
+		    right: .125em;
+		    bottom: .125em;
+		    left: .125em;
+		    background-color: #fff;
+		}
+
+		span {
+			line-height:1.05;
+			color:#fff;
+			border-radius:2px;
+			text-fill-color: #fff;
+			-webkit-text-fill-color: #fff;
+			display: inline-block;
+			background-size:100vw auto;
+			padding:0 .1em;
+			background-image:url(inc/img/hues-colors-100-200.svg);
+			background-clip: none;
+			-webkit-background-clip: none;
+			background-repeat:no-repeat;
+
+			&:nth-of-type(2) {
+				background-position:top center;
+			}
+			&:nth-of-type(3) {
+				background-position:bottom right;
+			}
+
+			transition:box-shadow .1s linear;
+
+			box-shadow:
+				0px 0px 0px 0px $yellow,
+				0px 0px 0px 0px $orange,
+				0px 0px 0px 0px $red,
+				0px 0px 0px 0px $purple,
+				0px 0px 0px 0px $light-blue,
+				0px 0px 0px 0px $teal,
+				0px 0px 0px 0px $light-green,
+				0px 0px 0px 0px $green;
+
+			&:hover {
+				background-clip: text;
+				-webkit-background-clip: text;
+				text-fill-color: transparent;
+				-webkit-text-fill-color: transparent;
+				box-shadow:
+					3px 3px 0px 0px $yellow,
+					6px 6px 0px 0px $orange,
+					9px 9px 0px 0px $red,
+					12px 12px 0px 0px $purple,
+					15px 15px 0px 0px $light-blue,
+					18px 18px 0px 0px $teal,
+					21px 21px 0px 0px $light-green,
+					24px 24px 0px 0px $green,
+					24px 24px 30px 15px rgba(255,255,255,.8),
+					6px 6px 35px 0px rgba(0,0,0,.2);
+			}
+		}
+	}
+}
+
+#hero-cta {
+	@extend %hues-bg;
+	margin:0 2%;
+
+	#hero-cta--inner {
+		padding:6vw;
+		background:rgba(0,0,0,.3);
+		border-radius:4px;
+
+		div.hero-cta--inner--wrap {
+			margin:2vw;
+		}
+
+		h2, p {
+			color:#fff;
+			padding:1vw 2vw;
+			margin:0 auto;
+			align-self:flex-start;
+			max-width:600px;
+		}
+
+		h2 {
+			line-height:1;
+		}
+
+		p {
+			line-height:1.3;
+
+			big {
+				font-family:$theme-font;
+			}
+
+			a {
+				font-weight:700;
+				color:#fff;
+				text-decoration:underline;
+			}
+		}
+
+		form {
+			display:flex;
+			justify-content: center;
+			padding:2vw;
+			overflow: hidden;
+
+			input[type=email]{
+				flex-grow:2;
+				background:#fff;
+			}
+
+			i.fa-lemon-o {
+				display:none;
+			}
+			button:hover {
+				background:$yellow;
+
+				i.fa-thumbs-o-up {
+					display:none;
+				}
+
+				i.fa-lemon-o {
+					display:inline;
+				}
+			}
+		}
+	}
+}
+.home #content .col-full {
+	max-width:100% !important;
+	width:100%!important;
+	padding:0!important;
+	margin:0 !important;
+}
+
+.home .storefront-featured-products {
+	padding:0 2%;
+	margin-bottom:0;
+}
+
+.showcase {
+	margin:0 auto;
+	padding:4vw;
+	background:#b7c0c1;
+
+	.wrap > h2 {
+		position: relative;
+		padding:0 .1em;
+		display:inline-block;
+		text-transform: uppercase;
+		color:#b7c0c1;
+		background:rgba(255,255,255,1);
+		margin:0 auto;
+	}
+
+	&:nth-of-type(even) {
+		background:#8e9596;
+		.wrap > h2 {color:#8e9596;}
+	}
+
+	p.section-description {
+		font-weight:500;
+		color:#fff;
+		margin:0;
+	}
+
+	.products li.product {
+		box-shadow:0px 10px 60px rgba(30,30,30,.25);
+
+	}
+
+	.products {
+		margin-top:30px;
+	}
+
+	&#szp {
+		h2 {color:$light-blue}
+		&, .products .product a.button:hover {background:$light-blue;}
+	}
+}
+
+.woocommerce-breadcrumb {
+	margin-bottom:0;
+}
+
+body.term-its-pronounced-metrosexual h1, body.term-its-pronounced-metrosexual .entry-content a, .showcase.term-its-pronounced-metrosexual .wrap > h2 {color:#eb366e !important;}
+.showcase.term-its-pronounced-metrosexual, .showcase.term-its-pronounced-metrosexual .products .product a.button:hover  {background:#eb366e;}
+
+body.term-safe-zone-project h1, body.term-safe-zone-project .entry-content a, .showcase.term-safe-zone-project .wrap > h2 {color:#3fa9f5 !important;}
+.showcase.term-safe-zone-project, .showcase.term-safe-zone-project .products .product a.button:hover  {background:#3fa9f5;}
+
+body.term-impetus-books h1, body.term-impetus-books .entry-content a, .showcase.term-impetus-books .wrap > h2 {color:#DA1F26 !important;}
+.showcase.term-impetus-books, .showcase.term-impetus-books .products .product a.button:hover  {background:#DA1F26;}
+
+
+body.term-heretic-podcast h1, body.term-heretic-podcast .entry-content a, .showcase.term-heretic-podcast .wrap > h2 {color:#67c2e7 !important;}
+.showcase.term-heretic-podcast, .showcase.term-heretic-podcast .products .product a.button:hover  {background:#67c2e7;}

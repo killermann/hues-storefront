@@ -1,0 +1,48 @@
+/*
+    Styles for Desktops (1030px) and Up
+*/
+
+html {
+	font-size:21px;
+}
+
+/*****************************
+CART STYLES
+*****************************/
+
+body.woocommerce-cart {
+	.col-full {
+		max-width:96vw;
+		width:96vw;
+
+		.entry-content {
+			.woocommerce {
+				display:flex;
+
+				form.woocommerce-cart-form {
+					&:before, &:after {display:none;}
+				}
+
+				.cart-collaterals {
+					margin:0 0 0 2vw;
+					padding:0;
+					float:none;
+
+					.cart_totals {
+						width:100%;
+						float:none;
+
+						h2 {
+							font-size:1.5em;
+							line-height:1;
+							display:block;
+							margin:-1.5em 0 .5em;
+						}
+					}
+
+					&:before, &:after {display:none;}
+				}
+			}
+		}
+	}
+}
