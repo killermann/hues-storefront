@@ -98,7 +98,7 @@ PRODUCT STYLES
 
 input[type=search] {
 	background:rgba(220,220,220,.1);
-	border-radius:4px;
+	border-radius:2px;
 	box-shadow:0px 2px 3px rgba(100,100,100,.2);
 	border:1px solid rgba(100,100,100,.1);
 
@@ -213,6 +213,7 @@ CART STYLES
 *****************************/
 
 .storefront-handheld-footer-bar ul li.cart > a:before {content:'\f07a';}
+.storefront-handheld-footer-bar a.footer-cart-contents span.count {background:$color--accent; top:.7em; right:.2em;width:1.5em; height:1.5em; line-height:1.5;}
 
 table.cart .button {background:#333; &:hover {color:#fff;background:$color--primary;}}
 table.cart .coupon .button {background:#ccc}
@@ -224,6 +225,24 @@ table.cart .coupon .button {background:#ccc}
 	&:hover {background:lighten($color--accent, 10%);}
 }
 
+.woocommerce-checkout {
+	.woocommerce > .woocommerce-info, .woocommerce > .woocommerce-message {
+		background:none;
+		color:#000;
+		padding:0;
+		border:none;
+		margin:0 auto 1em;
+
+		a {
+			text-decoration:underline;
+			color:$color--primary;
+		}
+	}
+
+	.woocommerce-form-login {
+		max-width:720px;
+	}
+}
 
 /*****************************
 NOTICE STYLES
@@ -236,13 +255,11 @@ NOTICE STYLES
 	background:$light-blue;
 }
 
-
-
 /*****************************
 HOME STYLES
 *****************************/
 
-#hero {
+.hero {
 	padding:6vw;
 
 	h1 {
@@ -266,18 +283,17 @@ HOME STYLES
 		}
 
 		span {
+			display: inline-block;
 			line-height:1.05;
 			color:#fff;
-			border-radius:2px;
+			border-radius:1px;
 			text-fill-color: #fff;
 			-webkit-text-fill-color: #fff;
-			display: inline-block;
+			@extend %hues-bg;
 			background-size:100vw auto;
 			padding:0 .1em;
-			background-image:url(inc/img/hues-colors-100-200.svg);
 			background-clip: none;
 			-webkit-background-clip: none;
-			background-repeat:no-repeat;
 
 			&:nth-of-type(2) {
 				background-position:top center;
@@ -317,16 +333,83 @@ HOME STYLES
 			}
 		}
 	}
+
+	ul {
+		display:flex;
+		align-items: flex-start;
+		list-style: none;
+		margin:0;
+		justify-content: center;
+		padding:2vw 0 0;
+
+		li {
+			margin:0;
+			padding:2vw;
+			text-align:center;
+
+			a {line-height:1.2;}
+
+			a.button {
+				display:block;
+				width:100%;
+				font-size:1.2em;
+				border:none;
+				color:rgba(255,255,255,1);
+				@extend %hues-bg;
+				background-size:400px auto;
+				background-position:center;
+				transition:box-shadow .1s linear;
+				box-shadow:
+					0px 0px 0px 0px $yellow,
+					0px 0px 0px 0px $orange,
+					0px 0px 0px 0px $red,
+					0px 0px 0px 0px $purple,
+					0px 0px 0px 0px $light-blue,
+					0px 0px 0px 0px $teal,
+					0px 0px 0px 0px $light-green,
+					0px 0px 0px 0px $green;
+
+
+				&:hover {
+					color:#000;
+					background:#fff;
+					transform:translateX(0) translateY(-2px);
+					box-shadow:
+						3px 3px 0px 0px $yellow,
+						6px 6px 0px 0px $orange,
+						9px 9px 0px 0px $red,
+						12px 12px 0px 0px $purple,
+						15px 15px 0px 0px $light-blue,
+						18px 18px 0px 0px $teal,
+						21px 21px 0px 0px $light-green,
+						24px 24px 0px 0px $green,
+						24px 24px 30px 15px rgba(255,255,255,.8),
+						6px 6px 35px 0px rgba(0,0,0,.2);
+				}
+			}
+
+			a.button-secondary {
+				background:#333;
+			}
+			span{
+				a {
+					color:#000;
+					font-size:14px;
+					line-height:1;
+					text-decoration:underline;
+				}
+			}
+		}
+	}
 }
 
-#hero-cta {
+.hero-cta {
 	@extend %hues-bg;
 	margin:0 2%;
 
-	#hero-cta--inner {
+	.hero-cta--inner {
 		padding:6vw;
 		background:rgba(0,0,0,.3);
-		border-radius:4px;
 
 		div.hero-cta--inner--wrap {
 			margin:2vw;
@@ -361,7 +444,7 @@ HOME STYLES
 		form {
 			display:flex;
 			justify-content: center;
-			padding:2vw;
+			padding:2vw 1vw;
 			overflow: hidden;
 
 			input[type=email]{
@@ -455,3 +538,54 @@ body.term-impetus-books h1, body.term-impetus-books .entry-content a, .showcase.
 
 body.term-heretic-podcast h1, body.term-heretic-podcast .entry-content a, .showcase.term-heretic-podcast .wrap > h2 {color:#67c2e7 !important;}
 .showcase.term-heretic-podcast, .showcase.term-heretic-podcast .products .product a.button:hover  {background:#67c2e7;}
+
+/*****************************
+FOOTER STYLES
+*****************************/
+
+.site-footer {
+	background:rgba(200, 200, 200, 0.2);
+	padding:0;
+	-webkit-box-shadow:inset 0 0 7px 0 rgba(0,0,0,.1);
+	box-shadow:inset 0 0 7px 0 rgba(0,0,0,.1);
+
+	.col-full {
+		max-width:94%;
+		width:94%;
+	}
+
+	.footer-widgets {border:none;}
+}
+
+.site-info {
+	text-align:center;
+	p {
+		padding:0 4vw;
+	}
+}
+
+.widget .widget-title, .widget .widgettitle {
+	font-family:$theme-font;
+	color:#000;
+	border:none;
+	line-height:1.1;
+	padding:0;
+}
+
+.widget_recent_entries ul li, .widget_pages ul li, .widget_categories ul li, .widget_archive ul li, .widget_recent_comments ul li, .widget_nav_menu ul li, .widget_links ul li, .widget_product_categories ul li, .widget_layered_nav ul li, .widget_layered_nav_filters ul li {
+	padding-left:0;
+
+	&:before {
+		display:none;
+	}
+}
+
+.widget {
+	.widget_nav_menu {
+		ul {
+			li {
+				&:before {}
+			}
+		}
+	}
+}

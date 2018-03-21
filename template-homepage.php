@@ -15,15 +15,15 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		<section id="hero">
+		<section class="hero">
 			<div class="wrap">
 				<h1>
 					<span>The hues Store</span> is merch created by (and supporting the work of) <span>Sam Killermann</span> + <span>Friends</span>
 				</h1>
 			</div>
 		</section>
-		<section id="hero-cta">
-			<div id="hero-cta--inner">
+		<section class="hero-cta">
+			<div class="hero-cta--inner">
 				<div class="hero-cta--inner--wrap">
 					<h2>Hi! Welcome to my lemonade stand.</h2>
 					<p>
@@ -67,7 +67,7 @@ get_header(); ?>
 			 */
 			do_action( 'homepage' ); ?>
 
-			<section class="showcase term-heretic-podcast">
+			<!-- <section class="showcase term-heretic-podcast">
 				<div class="wrap">
 					<h2>Heretic Podcast Merch</h2>
 					<p class="section-description">
@@ -119,7 +119,7 @@ get_header(); ?>
 						<?php echo do_shortcode('[products limit="4" columns="2"]');?>
 					</div>
 				</div>
-			</section>
+			</section> -->
 		</main><!-- #main -->
 
 	</div><!-- #primary -->

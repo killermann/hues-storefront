@@ -36,9 +36,12 @@ $color--accent: 	$pink;
 
 $sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
-$theme-font: 'Abadi MT Condensed Light', 'Futura Condensed';
+$serif: Georgia, serif;
+
+$theme-font: /*iOS*/"AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", /*MacOSX*/HelveticaNeue-CondensedBold, /*Ubuntu*/ "Ubuntu Condensed", "Liberation Sans Narrow",  /*Windows*/"Franklin Gothic Demi Cond", "Arial Narrow", /*Android*/sans-serif-condensed, /*Fallback*/Arial, "Trebuchet MS", "Lucida Grande", Tahoma, Verdana, sans-serif;
 
 %hues-clip {
+	background-color:$color--primary;
 	background-image:url(inc/img/hues-colors-100-200.svg);
 	background-size:100vw auto;
 	color:black;
@@ -50,6 +53,7 @@ $theme-font: 'Abadi MT Condensed Light', 'Futura Condensed';
 }
 
 %hues-bg {
+	background-color:$color--accent;
 	background-image:url(inc/img/hues-colors-100-200.svg);
 	background-size:cover;
 	background-position:top center;

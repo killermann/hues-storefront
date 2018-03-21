@@ -135,8 +135,8 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
  		if ( storefront_is_woocommerce_activated() ) {
 
  			$args = apply_filters( 'storefront_featured_products_args', array(
- 				'limit'   => 4,
- 				'columns' => 4,
+ 				'limit'   => 3,
+ 				'columns' => 3,
  				'orderby' => 'date',
  				'order'   => 'desc',
  				'title'   => __( '<i class="fa fa-thermometer-three-quarters"></i> Hot &amp; Fresh <i class="fa fa-hand-spock-o"></i>', 'storefront' ),
@@ -164,7 +164,32 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
  	}
  }
 
+ function get_footer_hero() {
+     if (is_single() ) {?>
+     <section class="hero">
+        <div class="wrap">
+            <h1>
+                <span>The hues Store</span> is merch created by (and supporting the work of) <span>Sam Killermann</span> + <span>Friends</span>
+            </h1>
+        </div>
+        <ul class="wrap">
+            <li>
+                <a href="" class="button">Become a Member</a>
+                <span><a href="" alt="">View benefits</a></span>
+            </li>
+            <li>
+                <a href="" class="button button-secondary">Join Mailing List</a>
+                <span><a href="" alt="">View past emails</a></span>
+            </li>
+        </ul>
+
+     </section>
+<?php } }
+
+ add_action('storefront_before_footer','get_footer_hero');
+
  // Remove "Storefront Designed by WooThemes" from Footer
+
  add_action( 'init', 'custom_remove_footer_credit', 10 );
  function custom_remove_footer_credit () {
      remove_action( 'storefront_footer', 'storefront_credit', 20 );
@@ -173,14 +198,14 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
 
  function custom_storefront_credit() {
      ?>
-    <div class="site-info">
-        <p class="first">
+    <div class="site-info wrap">
+        <p>
             Uncopyright <del>&copy;</del> <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?>. Proudly built with <a href="http://woocommerce.com" target="_blank">WooCommerce</a> &amp; <a href="https://woocommerce.com/storefront/" target="_blank">Storefront</a> (<a href="https://medium.com/startup-grind/shopify-is-now-the-single-largest-source-of-revenue-for-steve-bannons-breitbart-8de8106b262e#.vwe339ukn" target="_blank">#DeleteShopify</a>),
             fulfilled by <a href="http://printful.com" target="_blank">Printful</a> &amp; hosted with <a href="http://pressable.com" target="_blank">Pressable</a>,
             and based in sunny Austin, TX.
         </p>
-        <p class="last">
-            Every Shirt is Political<br/>
+        <p>
+            The hues Store<br/>
             P.O. Box 684412<br/>
             Austin, TX 78768<br/>
         </p>
