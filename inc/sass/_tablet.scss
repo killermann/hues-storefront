@@ -250,16 +250,6 @@ HEADER STYLES
 	&:hover .widget_shopping_cart {left:auto;}
 }
 
-.hero-cta {
-
-	.hero-cta--inner {
-		display:flex;
-		justify-content: center;
-		align-items: top;
-	}
-}
-
-
 /*****************************
 HOME STYLES
 *****************************/
@@ -267,6 +257,7 @@ HOME STYLES
 .home .storefront-featured-products {
 	.products {
 		li.product {
+			transition:transform .1s linear;
 			transform: scale(.92);
 			&:hover {
 				transform: scale(1.05);

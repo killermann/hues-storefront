@@ -6,6 +6,17 @@ html {
 	font-size:21px;
 }
 
+
+.hero-cta {
+
+	.hero-cta--inner {
+		padding:6vw 6vw 4vw;
+		display:flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+}
+
 /*****************************
 CART STYLES
 *****************************/

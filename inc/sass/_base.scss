@@ -97,7 +97,7 @@ PRODUCT STYLES
 *****************************/
 
 input[type=search] {
-	background:rgba(220,220,220,.1);
+	background:rgba(250,250,250,.4);
 	border-radius:2px;
 	box-shadow:0px 2px 3px rgba(100,100,100,.2);
 	border:1px solid rgba(100,100,100,.1);
@@ -158,7 +158,7 @@ ul.products {
 				margin:0 auto;
 			}
 
-			h2.woocommerce-loop-product__title {
+			h2 {
 				color:rgba(255,255,255,.95);
 				font-weight:100;
 				margin:15px auto 5px;
@@ -184,8 +184,8 @@ ul.products {
 				color:#000;
 				font-size:.7em;
 				position:absolute;
-				top:2px;
-				right:2px;
+				top:4px;
+				right:4px;
 				box-shadow:0px 2px 2px rgba(0,0,0,.2);
 			}
 
@@ -204,6 +204,23 @@ ul.products {
 			}
 
 			&.added_to_cart {text-align:center;background:rgba(200,200,200,.2)}
+		}
+	}
+
+	li.product-category.product {
+		background:none;
+		color:#000;
+		text-align:center;
+
+		img {
+			display:block;
+			margin:0 auto;
+		}
+
+		h2.woocommerce-loop-category__title {
+			color:#000;
+			margin:.2em auto;
+			font-size:1.5em;
 		}
 	}
 }
@@ -409,6 +426,7 @@ HOME STYLES
 
 	.hero-cta--inner {
 		padding:6vw;
+		overflow:hidden;
 		background:rgba(0,0,0,.3);
 
 		div.hero-cta--inner--wrap {
@@ -444,19 +462,46 @@ HOME STYLES
 		form {
 			display:flex;
 			justify-content: center;
-			padding:2vw 1vw;
+			margin:2vw 1vw;
+			padding:0;
 			overflow: hidden;
+			transition:box-shadow .2s linear;
+			font-size:24px;
+
+			box-shadow: 7px 7px 0px 0px $yellow,
+				16px 14px 0px 0px $orange,
+				24px 21px 0px 0px $red,
+				32px 28px 0px 0px $dark-red,
+				40px 35px 0px 0px $pink,
+				48px 42px 0px 0px $purple,
+				56px 49px 0px 0px $dark-purple,
+				64px 56px 0px 0px $blue,
+				72px 63px 0px 0px $light-blue,
+				80px 70px 0px 0px $teal,
+				88px 77px 0px 0px $dark-green,
+				96px 85px 0px 0px $light-green,
+				104px 92px 0px 0px $yellow;
 
 			input[type=email]{
 				flex-grow:2;
+				padding:0 40px;
 				background:#fff;
+			}
+
+			input {
+				min-height:80px;
+			}
+
+			button[type=submit]{
+				min-width:80px;
 			}
 
 			i.fa-lemon-o {
 				display:none;
 			}
 			button:hover {
-				background:$yellow;
+				background:$light-yellow;
+
 
 				i.fa-thumbs-o-up {
 					display:none;
@@ -553,6 +598,8 @@ FOOTER STYLES
 		max-width:94%;
 		width:94%;
 	}
+
+	a:hover {color:$color--primary;}
 
 	.footer-widgets {border:none;}
 }
