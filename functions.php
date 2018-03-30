@@ -179,7 +179,6 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
             </li>
             <li>
                 <a href="" class="button button-secondary">Join Mailing List</a>
-                <span><a href="" alt="">View past emails</a></span>
             </li>
         </ul>
 
