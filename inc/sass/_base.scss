@@ -459,59 +459,71 @@ HOME STYLES
 			}
 		}
 
-		form {
-			display:flex;
-			justify-content: center;
-			margin:2vw 1vw;
+		.ck_form, .ck_form.ck_naked{
+			margin:0;
 			padding:0;
-			overflow: hidden;
-			transition:box-shadow .2s linear;
-			font-size:24px;
+			overflow:visible;
 
-			box-shadow: 7px 7px 0px 0px $yellow,
-				16px 14px 0px 0px $orange,
-				24px 21px 0px 0px $red,
-				32px 28px 0px 0px $dark-red,
-				40px 35px 0px 0px $pink,
-				48px 42px 0px 0px $purple,
-				56px 49px 0px 0px $dark-purple,
-				64px 56px 0px 0px $blue,
-				72px 63px 0px 0px $light-blue,
-				80px 70px 0px 0px $teal,
-				88px 77px 0px 0px $dark-green,
-				96px 85px 0px 0px $light-green,
-				104px 92px 0px 0px $yellow;
-
-			input[type=email]{
-				flex-grow:2;
-				padding:0 40px;
-				background:#fff;
+			.ck_form_fields {
+				padding:0;
+				display:block;
+				float:none;
 			}
 
-			input {
-				min-height:80px;
-			}
-
-			button[type=submit]{
-				min-width:80px;
-			}
-
-			i.fa-lemon-o {
-				display:none;
-			}
-			button:hover {
+			form {
 				background:$light-yellow;
+				padding:7px;
+				margin:2vw 1vw;
+				overflow: hidden;
+				border-radius:2px;
+				transition:box-shadow .2s linear;
+				font-size:24px;
 
+				box-shadow: 7px 7px 0px 0px $yellow,
+					16px 14px 0px 0px $orange,
+					24px 21px 0px 0px $red,
+					32px 28px 0px 0px $dark-red,
+					40px 35px 0px 0px $pink,
+					48px 42px 0px 0px $purple,
+					56px 49px 0px 0px $dark-purple,
+					64px 56px 0px 0px $blue,
+					72px 63px 0px 0px $light-blue,
+					80px 70px 0px 0px $teal,
+					88px 77px 0px 0px $dark-green,
+					96px 85px 0px 0px $light-green,
+					104px 92px 0px 0px $yellow;
 
-				i.fa-thumbs-o-up {
-					display:none;
+				input{
+					background:#fff;
+					padding:.5em .7em;
+					height:auto;
+					border-radius:1px;
+					font-size:.8em;
 				}
 
-				i.fa-lemon-o {
-					display:inline;
+				button.ck_subscribe_button {
+					background:$color--accent;
+					border-radius:1px;
+					padding:.5em .7em;
+					font-size:.8em;
+					height:auto;
+					border:1px solid rgba(0,0,0,.1);
+
+					&:hover {
+						background-color:$teal;
+					}
 				}
 			}
 		}
+
+		#ck_success_msg {
+		    padding: 4vw;
+		    border: none;
+			border-radius:2px;
+		    background: rgba(0,0,0,.7);
+		    margin: 15px 0;
+		}
+
 	}
 }
 .home #content .col-full {
