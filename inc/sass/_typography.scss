@@ -26,13 +26,6 @@ h5, .h5 {font-size: 1.28em;}
 
 h6, .h6 {font-size: 1.125em;}
 
-.entry-content {
-	h1, h2, h3, h4, h5, h6 {margin-bottom:1.5rem;}
-	h2 {
-		font-weight:800;
-	}
-}
-
 p {
 	margin-bottom: 1.5rem;
 }
@@ -68,7 +61,6 @@ ul, ol {
 	}
 }
 
-
 abbr, acronym {
 	border-bottom: 1px dotted $color--primary;
 	cursor: help;
@@ -91,6 +83,11 @@ big {
 /* entry content */
 .entry-content {
 	text-rendering: optimizelegibility;
+
+    h1, h2, h3, h4, h5, h6 {margin-bottom:1.5rem;}
+	h2 {
+		font-weight:800;
+	}
 
 	p, ul, ol, address, h1,h2,h3,h4,h5,h6 {
 		max-width:720px;

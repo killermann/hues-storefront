@@ -92,12 +92,6 @@ h5, .h5 {
 h6, .h6 {
   font-size: 1.125em; }
 
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
-  margin-bottom: 1.5rem; }
-
-.entry-content h2 {
-  font-weight: 800; }
-
 p {
   margin-bottom: 1.5rem; }
 
@@ -141,6 +135,10 @@ big {
 /* entry content */
 .entry-content {
   text-rendering: optimizelegibility; }
+  .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
+    margin-bottom: 1.5rem; }
+  .entry-content h2 {
+    font-weight: 800; }
   .entry-content p, .entry-content ul, .entry-content ol, .entry-content address, .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 {
     max-width: 720px;
     margin-left: auto;
