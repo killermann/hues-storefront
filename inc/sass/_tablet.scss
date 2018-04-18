@@ -258,9 +258,9 @@ HOME STYLES
 	.products {
 		li.product {
 			transition:transform .1s linear;
-			transform: scale(.92);
+			transform: scale(.95);
 			&:hover {
-				transform: scale(1.05);
+				transform: scale(1.02);
 			}
 		}
 		li:nth-of-type(2), li:nth-of-type(even) {
@@ -272,6 +272,8 @@ HOME STYLES
 				border-color:$yellow;
 				background:$yellow;
 				a, a h2, a span{color:#000;}
+
+				a.button {background:$light-yellow;}
 			}
 		}
 	}

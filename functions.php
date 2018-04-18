@@ -179,7 +179,6 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
             </li>
             <li>
                 <a href="" class="button button-secondary">Join Mailing List</a>
-                <span><a href="" alt="">View past emails</a></span>
             </li>
         </ul>
 
@@ -187,6 +186,18 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
 <?php } }
 
  add_action('storefront_before_footer','get_footer_hero');
+
+function get_about_list() {?>
+    <section class="faq-list wrap">
+        <h3 class="pink">
+            <i class="fa fa-user"></i>
+            <span>Title</span>
+        </h3>
+        <p class="pink">
+            This is the explanation of the title. Let's do this!
+        </p>
+    </section>
+<?php }
 
  // Remove "Storefront Designed by WooThemes" from Footer
 

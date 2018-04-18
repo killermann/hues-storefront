@@ -29,6 +29,13 @@ body.woocommerce-cart {
 		.entry-content {
 			.woocommerce {
 				display:flex;
+				flex-wrap:wrap;
+
+				.woocommerce-message {
+					flex-basis:100%;
+					margin-bottom:2%;
+					clear:none;
+				}
 
 				form.woocommerce-cart-form {
 					&:before, &:after {display:none;}
@@ -47,7 +54,7 @@ body.woocommerce-cart {
 							font-size:1.5em;
 							line-height:1;
 							display:block;
-							margin:-1.5em 0 .5em;
+							margin:0 0 .5em;
 						}
 					}
 
