@@ -262,7 +262,7 @@ HEADER STYLES
   color: #000;
   padding: 2%;
   margin: 2% 2% 0;
-  font-size: 17px;
+  font-size: calc(12px + .5vw);
   text-align: center;
   border-radius: 1px; }
   .notice p {
@@ -737,41 +737,96 @@ body.term-heretic-podcast h1, body.term-heretic-podcast .entry-content a, .showc
 /*****************************
 FAQ LIST STYLES
 *****************************/
-.faq-list {
+.faq-list .faq {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
-  .faq-list h3 {
-    padding: 2%;
-    text-align: center; }
-    .faq-list h3 i.fa {
-      font-size: 50px;
-      width: 134px;
-      height: 134px;
-      line-height: 110px;
-      border: 12px solid #ddd;
-      border-radius: 100%; }
-    .faq-list h3 span {
-      font-size: 1.5rem;
-      display: block; }
-    .faq-list h3.pink {
-      color: #e81d76; }
-      .faq-list h3.pink i.fa {
-        border-color: #e81d76; }
-  .faq-list p {
-    padding: 2%;
-    font-size: 1.3rem;
-    margin: 0; }
-    .faq-list p + p {
-      margin-top: 1em; }
+  align-items: center;
+  margin: 0 auto; }
+  .faq-list .faq:nth-of-type(even) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse; }
+  .faq-list .faq.pink h3, .faq-list .faq.pink strong {
+    color: #e81d76; }
+  .faq-list .faq.pink i.fa:after {
+    background: #e81d76; }
+  .faq-list .faq.light-blue h3, .faq-list .faq.light-blue strong {
+    color: #42b4e3; }
+  .faq-list .faq.light-blue i.fa:after {
+    background: #42b4e3; }
+  .faq-list .faq.light-orange h3, .faq-list .faq.light-orange strong {
+    color: #f5a81c; }
+  .faq-list .faq.light-orange i.fa:after {
+    background: #f5a81c; }
+  .faq-list .faq.teal h3, .faq-list .faq.teal strong {
+    color: #00a897; }
+  .faq-list .faq.teal i.fa:after {
+    background: #00a897; }
+  .faq-list .faq.purple h3, .faq-list .faq.purple strong {
+    color: #AF6EE2; }
+  .faq-list .faq.purple i.fa:after {
+    background: #AF6EE2; }
+  .faq-list .faq.light-green h3, .faq-list .faq.light-green strong {
+    color: #81bc41; }
+  .faq-list .faq.light-green i.fa:after {
+    background: #81bc41; }
+  .faq-list .faq.green h3, .faq-list .faq.green strong {
+    color: #40ae49; }
+  .faq-list .faq.green i.fa:after {
+    background: #40ae49; }
+
+.faq-list h3 {
+  padding: calc(10px + 2%);
+  text-align: center; }
+  .faq-list h3 i.fa {
+    font-size: 30px;
+    width: 80px;
+    color: #fff;
+    position: relative;
+    height: 110px;
+    line-height: 110px; }
+    .faq-list h3 i.fa:after {
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      position: absolute;
+      content: '';
+      background: #ccc;
+      -webkit-transform: skewX(-15deg);
+      -ms-transform: skewX(-15deg);
+      transform: skewX(-15deg); }
+  .faq-list h3 span {
+    font-size: 1.5rem;
+    display: block; }
+
+.faq-list p {
+  padding: calc(10px + 2%);
+  font-size: calc(1.1rem + .2vw);
+  line-height: 1.2;
+  margin: 0;
+  max-width: 720px; }
+  .faq-list p strong {
+    font-family: HelveticaNeue-CondensedBold, "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", "Ubuntu Condensed", "Liberation Sans Narrow", "Franklin Gothic Demi Cond", "Arial Narrow", sans-serif-condensed, Arial, "Trebuchet MS", "Lucida Grande", Tahoma, Verdana, sans-serif;
+    color: #222;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    margin-right: .5em; }
+  .faq-list p a {
+    color: #000;
+    text-decoration: underline; }
+  .faq-list p + p {
+    margin-top: 1em; }
 
 /*****************************
 FOOTER STYLES
@@ -1063,6 +1118,11 @@ HOME STYLES
         color: #000; }
       .home .storefront-featured-products .products li:nth-of-type(2).sale a.button, .home .storefront-featured-products .products li:nth-of-type(even).sale a.button {
         background: #fcdc00; }
+  .faq-list .faq i.fa {
+    font-size: 40px;
+    width: 110px;
+    height: 130px;
+    line-height: 130px; }
   /*****************************
 PRODUCT STYLES
 *****************************/

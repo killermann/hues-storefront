@@ -189,13 +189,30 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
 
 function get_about_list() {?>
     <section class="faq-list wrap">
-        <h3 class="pink">
-            <i class="fa fa-user"></i>
-            <span>Title</span>
-        </h3>
-        <p class="pink">
-            This is the explanation of the title. Let's do this!
-        </p>
+        <div class="faq light-orange">
+            <h3 aria-hidden="true">
+                <i class="fa fa-user"></i>
+            </h3>
+            <p>
+                This is the explanation of the title. Let's do this!
+            </p>
+        </div>
+        <div class="faq pink">
+            <h3 aria-hidden="true">
+                <i class="fa fa-key"></i>
+            </h3>
+            <p>
+                <strong>Only the best.</strong> This is the explanation <a href="">of the title</a>. Let's try a longer one. Maybe three sentences?
+            </p>
+        </div>
+        <div class="faq">
+            <h3 aria-hidden="true">
+                <i class="fa fa-key"></i>
+            </h3>
+            <p>
+                <strong>Only the best.</strong> This is the explanation <a href="">of the title</a>. Let's try a longer one. Maybe three sentences?
+            </p>
+        </div>
     </section>
 <?php }
 

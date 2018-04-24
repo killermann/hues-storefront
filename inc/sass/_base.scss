@@ -97,7 +97,7 @@ HEADER STYLES
 	color:#000;
 	padding:2%;
 	margin:2% 2% 0;
-	font-size:17px;
+	font-size:calc(12px + .5vw);
 	text-align:center;
 	border-radius:1px;
 
@@ -699,41 +699,77 @@ FAQ LIST STYLES
 *****************************/
 
 .faq-list {
-	display:flex;
-	flex-wrap:wrap;
-	justify-content: center;
-	align-items: center;
+	.faq {
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		margin:0 auto;
+
+		&:nth-of-type(even){
+			flex-direction: row-reverse;
+		}
+
+		&.pink {h3, strong {color:$pink;} i.fa:after {background:$pink;}}
+		&.light-blue {h3, strong {color:$light-blue;} i.fa:after {background:$light-blue;}}
+		&.light-orange {h3, strong {color:$light-orange;} i.fa:after {background:$light-orange;}}
+		&.teal {h3, strong {color:$teal;} i.fa:after {background:$teal;}}
+		&.purple {h3, strong {color:$purple;} i.fa:after {background:$purple;}}
+		&.light-green {h3, strong {color:$light-green;} i.fa:after {background:$light-green;}}
+		&.green {h3, strong {color:$green;} i.fa:after {background:$green;}}
+	}
 
 	h3 {
-		padding:2%;
+		padding:calc(10px + 2%);
 		text-align:center;
 
 		i.fa {
-			font-size:50px;
-			width:134px;
-			height:134px;
+			font-size:30px;
+			width:80px;
+			color:#fff;
+			position:relative;
+			height:110px;
 			line-height:110px;
-			border:12px solid #ddd;
-			border-radius:100%;
+
+			&:after {
+				display:block;
+				top:0;
+				left:0;
+				height:100%;
+				width:100%;
+				z-index:-1;
+				position:absolute;
+				content:'';
+				background:#ccc;
+				transform: skewX(-15deg);
+			}
 		}
 
 		span {
 			font-size:1.5rem;
 			display:block;
 		}
-
-		&.pink {
-			color:$pink;
-			i.fa {border-color:$pink;}
-		}
 	}
 
-
-
 	p {
-		padding:2%;
-		font-size:1.3rem;
+		padding:calc(10px + 2%);
+		font-size:calc(1.1rem + .2vw);
+		line-height:1.2;
 		margin:0;
+		max-width:720px;
+
+		strong {
+			font-family:$theme-font;
+			color:#222;
+			font-weight:900;
+			text-transform:uppercase;
+			letter-spacing:.03em;
+			margin-right:.5em;
+		}
+
+		a {
+			color:#000;
+			text-decoration:underline;
+		}
 
 		& + p {
 			margin-top:1em;
