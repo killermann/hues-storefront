@@ -272,7 +272,9 @@ HEADER STYLES
       margin-top: 1em; }
     .notice p i.fa {
       float: left;
-      font-size: 2em; }
+      font-size: 2em;
+      padding: 0 15px 15px 0;
+      color: #fff; }
     .notice p a {
       color: #000;
       text-decoration: none;
@@ -281,8 +283,6 @@ HEADER STYLES
         border-bottom: 3px solid #000; }
   .notice#home-notice {
     background: #fcdc00; }
-    .notice#home-notice i.fa {
-      color: #fff; }
 
 /*****************************
 PRODUCT STYLES

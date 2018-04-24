@@ -112,6 +112,8 @@ HEADER STYLES
 		i.fa {
 			float:left;
 			font-size:2em;
+			padding:0 15px 15px 0;
+			color:#fff;
 		}
 
 		a {
@@ -127,10 +129,6 @@ HEADER STYLES
 
 	&#home-notice {
 		background:$light-yellow;
-
-		i.fa {
-			color:#fff;
-		}
 	}
 }
 /*****************************
