@@ -46,7 +46,7 @@ Images License: GNU General Public License v2 or later
 .bg--teal {
   background-color: #00a897; }
 
-.hero h1 {
+.hero h1, body.page #primary .entry-header h1.entry-title {
   background-color: #00a897;
   background-image: url(inc/img/hues-colors-100-200.svg);
   background-size: 100vw auto;
@@ -219,9 +219,9 @@ HEADER STYLES
   background-repeat: repeat-x;
   background-size: auto 45px;
   background-position: center -40px;
-  background-color: rgba(200, 200, 200, 0.2);
+  background-color: rgba(200, 200, 200, 0.4);
   padding: 15px;
-  border-bottom: 1px solid rgba(200, 200, 200, 0.3); }
+  border-bottom: 1px solid rgba(200, 200, 200, 0.4); }
   #masthead .col-full {
     max-width: 100%;
     margin: 0;
@@ -285,18 +285,96 @@ HEADER STYLES
     background: #fcdc00; }
 
 /*****************************
+LOOP STYLES
+*****************************/
+.loop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch; }
+  .loop .card {
+    max-width: 320px;
+    width: 100%;
+    background: #f1f1f1;
+    margin: 1em;
+    border-radius: 1px;
+    -webkit-transition: all .1s linear;
+    -o-transition: all .1s linear;
+    transition: all .1s linear;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: space-between;
+    -ms-flex-align: space-between;
+    align-items: space-between;
+    overflow: hidden; }
+    .loop .card h3 {
+      padding: 2rem;
+      margin: 0;
+      -webkit-transition: background .1s linear;
+      -o-transition: background .1s linear;
+      transition: background .1s linear;
+      color: #000;
+      border-bottom: 1px solid #ddd; }
+    .loop .card p {
+      padding: 2rem;
+      margin: 0;
+      color: #222; }
+    .loop .card:hover {
+      background: #fff;
+      -webkit-transform: translateX(0px) translateY(-6px);
+      -ms-transform: translateX(0px) translateY(-6px);
+      transform: translateX(0px) translateY(-6px);
+      -webkit-box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2); }
+      .loop .card:hover h3 {
+        background-color: #f5a81c;
+        border-color: #fff; }
+    .loop .card:nth-of-type(2):hover h3 {
+      background-color: #e81d76; }
+    .loop .card:nth-of-type(3):hover h3 {
+      background-color: #42b4e3; }
+    .loop .card:nth-of-type(4):hover h3 {
+      background-color: #00a897; }
+    .loop .card:nth-of-type(5):hover h3 {
+      background-color: #AF6EE2; }
+    .loop .card:nth-of-type(7):hover h3 {
+      background-color: #e81d76; }
+    .loop .card:nth-of-type(8):hover h3 {
+      background-color: #42b4e3; }
+    .loop .card:nth-of-type(9):hover h3 {
+      background-color: #00a897; }
+    .loop .card:nth-of-type(10):hover h3 {
+      background-color: #AF6EE2; }
+
+/*****************************
 PRODUCT STYLES
 *****************************/
 input[type=search] {
-  background: rgba(250, 250, 250, 0.4);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 2px;
-  -webkit-box-shadow: 0px 2px 3px rgba(100, 100, 100, 0.2);
-  box-shadow: 0px 2px 3px rgba(100, 100, 100, 0.2);
-  border: 1px solid rgba(100, 100, 100, 0.1); }
+  -webkit-box-shadow: 0px 2px 4px rgba(100, 100, 100, 0.4);
+  box-shadow: 0px 2px 4px rgba(100, 100, 100, 0.4);
+  border: 1px solid rgba(100, 100, 100, 0.2); }
   input[type=search]:focus {
     background: #fff;
-    -webkit-box-shadow: 0px 2px 3px rgba(100, 100, 100, 0.5);
-    box-shadow: 0px 2px 3px rgba(100, 100, 100, 0.5); }
+    -webkit-box-shadow: 0px 1px 4px rgba(100, 100, 100, 0.6);
+    box-shadow: 0px 1px 4px rgba(100, 100, 100, 0.6); }
 
 .single-product .content-area {
   float: none;
@@ -411,7 +489,8 @@ ul.products {
         color: #fff; }
     ul.products li.product a.added_to_cart {
       text-align: center;
-      background: rgba(200, 200, 200, 0.2); }
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff; }
   ul.products li.product-category.product {
     background: none;
     color: #000;
@@ -829,13 +908,36 @@ FAQ LIST STYLES
     margin-top: 1em; }
 
 /*****************************
+PAGE STYLES
+*****************************/
+body.page #primary {
+  margin: 0; }
+  body.page #primary .hentry {
+    margin: 0; }
+  body.page #primary .entry-header {
+    text-align: center; }
+    body.page #primary .entry-header h1.entry-title {
+      font-weight: 900;
+      font-size: calc(3em + 3vw);
+      display: inline-block;
+      color: #00a897;
+      margin: 20px auto 40px;
+      background-size: cover;
+      text-transform: uppercase;
+      line-height: 1; }
+  body.page #primary .entry-content p:first-of-type {
+    font-size: 1.3em;
+    font-family: HelveticaNeue-CondensedBold, "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", "Ubuntu Condensed", "Liberation Sans Narrow", "Franklin Gothic Demi Cond", "Arial Narrow", sans-serif-condensed, Arial, "Trebuchet MS", "Lucida Grande", Tahoma, Verdana, sans-serif; }
+
+body.page .loop {
+  margin-bottom: 2em; }
+
+/*****************************
 FOOTER STYLES
 *****************************/
 .site-footer {
-  background: rgba(200, 200, 200, 0.2);
-  padding: 0;
-  -webkit-box-shadow: inset 0 0 7px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 0 7px 0 rgba(0, 0, 0, 0.1); }
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0; }
   .site-footer .col-full {
     max-width: 94%;
     width: 94%; }
@@ -845,7 +947,8 @@ FOOTER STYLES
     border: none; }
 
 .site-info {
-  text-align: center; }
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5); }
   .site-info p {
     padding: 0 4vw; }
 
@@ -1192,8 +1295,8 @@ CART STYLES
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
       body.woocommerce-cart .col-full .entry-content .woocommerce .woocommerce-message {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;

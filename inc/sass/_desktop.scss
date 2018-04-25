@@ -29,7 +29,7 @@ body.woocommerce-cart {
 		.entry-content {
 			.woocommerce {
 				display:flex;
-				flex-wrap:wrap;
+				flex-wrap:nowrap;
 
 				.woocommerce-message {
 					flex-basis:100%;

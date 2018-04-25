@@ -34,6 +34,12 @@ function sf_child_theme_dequeue_style() {
  }
  add_action('init', 'replace_jquery');
 
+// Make Gallery Thumbs Full Size Quality
+
+ add_filter( 'woocommerce_gallery_image_size', function( $size ) {
+     return 'full';
+ } );
+
 // REMOVE DEFAULT GOOGLE FontAwesome
 function dequeue_default_google_fonts() {
     wp_dequeue_style( 'storefront-fonts');
@@ -216,29 +222,46 @@ function get_about_list() {?>
     </section>
 <?php }
 
+add_post_type_support( 'page', 'excerpt' );
+
+function loop_child_pages() {
+    if (is_page()) {
+
+        global $post;
+
+        $args = array(
+            'post_parent' => $post->ID,
+            'post_type' => 'page',
+            'orderby' => 'menu_order'
+        );
+
+        $child_query = new WP_Query( $args );
+
+        echo '<div class="loop">';
+
+        while ( $child_query->have_posts() ) : $child_query->the_post(); ?>
+
+            <a <?php post_class('card'); ?> href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">
+                <h3><?php the_title(); ?></h3>
+                <?php the_excerpt(); ?>
+            </a>
+        <?php endwhile; ?>
+
+        <?php
+        wp_reset_postdata();
+
+        echo '</div>';
+    }
+
+}
+
+add_action ('storefront_before_footer', 'loop_child_pages');
+
  // Remove "Storefront Designed by WooThemes" from Footer
 
  add_action( 'init', 'custom_remove_footer_credit', 10 );
  function custom_remove_footer_credit () {
      remove_action( 'storefront_footer', 'storefront_credit', 20 );
-     add_action( 'storefront_after_footer', 'custom_storefront_credit', 20 );
- }
-
- function custom_storefront_credit() {
-     ?>
-    <div class="site-info wrap">
-        <p>
-            Uncopyright <del>&copy;</del> <?php echo get_bloginfo( 'name' ) . ' ' . get_the_date( 'Y' ); ?>. Proudly built with <a href="http://woocommerce.com" target="_blank">WooCommerce</a> &amp; <a href="https://woocommerce.com/storefront/" target="_blank">Storefront</a> (<a href="https://medium.com/startup-grind/shopify-is-now-the-single-largest-source-of-revenue-for-steve-bannons-breitbart-8de8106b262e#.vwe339ukn" target="_blank">#DeleteShopify</a>),
-            fulfilled by <a href="http://printful.com" target="_blank">Printful</a> &amp; hosted with <a href="http://pressable.com" target="_blank">Pressable</a>,
-            and based in sunny Austin, TX.
-        </p>
-        <p>
-            The hues Store<br/>
-            P.O. Box 684412<br/>
-            Austin, TX 78768<br/>
-        </p>
-    </div><!-- .site-info -->
-    <?php
  }
 
 // Adding Buttons to Products
