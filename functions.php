@@ -257,6 +257,35 @@ function loop_child_pages() {
 
 add_action ('storefront_before_footer', 'loop_child_pages');
 
+// Below Header Message
+
+function get_store_primer() {?>
+    <ul id="storePrimer">
+        <li class="light-orange">
+            <i class="fa fa-fw fa-truck fa-pull-right fa-2x"></i>
+            <strong>Free US Shipping</strong>
+            <span>on orders over $50</span>
+        </li>
+        <li class="pink">
+            <i class="fa fa-fw fa-recycle fa-pull-right fa-2x"></i>
+            <strong>Ethical &amp; Sustainable</strong>
+            <span>sweatshop free supply chain</span>
+        </li>
+        <li class="light-blue">
+            <i class="fa fa-fw fa-cc-paypal fa-pull-right fa-2x"></i>
+            <strong>PayPal Accepted</strong>
+            <span>+ all major credit cards</span>
+        </li>
+        <li class="teal">
+            <i class="fa fa-fw fa-hand-spock-o fa-pull-right fa-2x"></i>
+            <strong>Indepently Run</strong>
+            <span>supporting social justice</span>
+        </li>
+    </ul>
+<?php }
+
+add_action ('storefront_before_content','get_store_primer');
+
  // Remove "Storefront Designed by WooThemes" from Footer
 
  add_action( 'init', 'custom_remove_footer_credit', 10 );

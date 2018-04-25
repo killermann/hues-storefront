@@ -308,7 +308,7 @@ LOOP STYLES
     width: 100%;
     background: #f1f1f1;
     margin: 1em;
-    border-radius: 1px;
+    border-radius: 2px;
     -webkit-transition: all .1s linear;
     -o-transition: all .1s linear;
     transition: all .1s linear;
@@ -443,6 +443,7 @@ ul.products {
     -ms-flex-direction: column;
     flex-direction: column;
     overflow: hidden;
+    border-radius: 2px;
     margin: 0 0 20px; }
     ul.products li.product a img {
       border-radius: 0;
@@ -572,6 +573,45 @@ NOTICE STYLES
 
 .woocommerce-info, .woocommerce-noreviews, p.no-comments {
   background: #42b4e3; }
+
+#storePrimer {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 1.1;
+  margin: 0;
+  padding: 0; }
+  #storePrimer li {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8); }
+    #storePrimer li strong, #storePrimer li span {
+      display: block; }
+    #storePrimer li strong {
+      color: rgba(255, 255, 255, 0.95); }
+    #storePrimer li i {
+      color: rgba(255, 255, 255, 0.6); }
+    #storePrimer li.light-orange {
+      background: #f5a81c; }
+    #storePrimer li.light-blue {
+      background: #42b4e3; }
+    #storePrimer li.pink {
+      background: #e81d76; }
+    #storePrimer li.teal {
+      background: #00a897; }
+
+@media only screen and (min-width: 480px) {
+  #storePrimer li {
+    width: 50%; } }
+
+@media only screen and (min-width: 940px) {
+  #storePrimer li {
+    width: 25%; } }
 
 /*****************************
 HOME STYLES

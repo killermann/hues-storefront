@@ -148,7 +148,7 @@ LOOP STYLES
 		width:100%;
 		background:#f1f1f1;
 		margin:1em;
-		border-radius:1px;
+		border-radius:2px;
 		transition:all .1s linear;
 		display:flex;
 		flex-direction:column;
@@ -277,6 +277,7 @@ ul.products {
 		text-align:left;
 		flex-direction:column;
 		overflow:hidden;
+		border-radius:2px;
 		margin:0 0 20px;
 
 		a {
@@ -422,6 +423,47 @@ NOTICE STYLES
 .woocommerce-info, .woocommerce-noreviews, p.no-comments {
 	background:$light-blue;
 }
+
+#storePrimer {
+	list-style:none;
+	display:flex;
+	flex-wrap:wrap;
+	font-size:12px;
+	line-height:1.1;
+	margin:0;
+	padding:0;
+
+	li {
+		width:100%;
+		padding:10px;
+		margin:0;
+		color:rgba(255,255,255,.8);
+
+		strong, span{
+			display:block;
+		}
+
+		strong {
+			color:rgba(255,255,255,.95);
+		}
+
+		i {
+			color:rgba(255,255,255,.6);
+		}
+		&.light-orange {background:$light-orange;}
+		&.light-blue {background:$light-blue;}
+		&.pink {background:$pink;}
+		&.teal {background:$teal;}
+	}
+}
+
+	@media only screen and (min-width: 480px) {
+		#storePrimer li {width:50%;}
+	}
+
+	@media only screen and (min-width: 940px) {
+		#storePrimer li {width:25%;}
+	}
 
 /*****************************
 HOME STYLES
