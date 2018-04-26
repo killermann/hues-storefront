@@ -340,6 +340,10 @@ ul.products {
 	}
 }
 
+.storefront-full-width-content .woocommerce-products-header, .storefront-full-width-content.woocommerce-account .entry-header, .storefront-full-width-content.woocommerce-cart .entry-header, .storefront-full-width-content.woocommerce-checkout .entry-header {
+	padding-bottom:1.5em;
+}
+
 /*****************************
 *****************************
 CART STYLES

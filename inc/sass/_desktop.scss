@@ -30,11 +30,19 @@ body.woocommerce-cart {
 			.woocommerce {
 				display:flex;
 				flex-wrap:nowrap;
+				justify-content: center;
 
 				.woocommerce-message {
 					flex-basis:100%;
+					position:fixed;
+					bottom:0;
+					left:0;
+					z-index:99999;
 					margin-bottom:2%;
 					clear:none;
+					&:before, &:after {display:none;}
+
+					a {text-decoration:underline;}
 				}
 
 				form.woocommerce-cart-form {

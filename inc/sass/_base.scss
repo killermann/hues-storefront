@@ -147,7 +147,7 @@ LOOP STYLES
 		max-width:320px;
 		width:100%;
 		background:#f1f1f1;
-		margin:1em;
+		margin:.7em;
 		border-radius:2px;
 		transition:all .1s linear;
 		display:flex;
@@ -239,7 +239,7 @@ input[type=search] {
 				text-align:center;
 				line-height:60px;
 				margin:0;
-				z-index:999;
+				z-index:9;
 				color:#000;
 				position:absolute;
 				top:0px;
@@ -827,7 +827,7 @@ FAQ LIST STYLES
 		i.fa {
 			font-size:30px;
 			width:80px;
-			color:#fff;
+			color:rgba(255,255,255,.9);
 			position:relative;
 			height:110px;
 			line-height:110px;
@@ -865,7 +865,6 @@ FAQ LIST STYLES
 			font-weight:900;
 			text-transform:uppercase;
 			letter-spacing:.03em;
-			margin-right:.5em;
 		}
 
 		a {

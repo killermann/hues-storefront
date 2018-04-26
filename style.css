@@ -143,6 +143,8 @@ big {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto; }
+  .entry-content ul, .entry-content ol {
+    padding-left: 2em; }
   .entry-content blockquote, .entry-content pre {
     max-width: 800px;
     margin-left: auto;
@@ -307,7 +309,7 @@ LOOP STYLES
     max-width: 320px;
     width: 100%;
     background: #f1f1f1;
-    margin: 1em;
+    margin: .7em;
     border-radius: 2px;
     -webkit-transition: all .1s linear;
     -o-transition: all .1s linear;
@@ -400,7 +402,7 @@ input[type=search] {
   text-align: center;
   line-height: 60px;
   margin: 0;
-  z-index: 999;
+  z-index: 9;
   color: #000;
   position: absolute;
   top: 0px;
@@ -907,7 +909,7 @@ FAQ LIST STYLES
   .faq-list h3 i.fa {
     font-size: 30px;
     width: 80px;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.9);
     position: relative;
     height: 110px;
     line-height: 110px; }
@@ -939,8 +941,7 @@ FAQ LIST STYLES
     color: #222;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: .03em;
-    margin-right: .5em; }
+    letter-spacing: .03em; }
   .faq-list p a {
     color: #000;
     text-decoration: underline; }
@@ -1300,6 +1301,8 @@ PRODUCT STYLES
     width: 45%;
     float: right;
     margin-right: 0; }
+  .storefront-full-width-content .woocommerce-products-header, .storefront-full-width-content.woocommerce-account .entry-header, .storefront-full-width-content.woocommerce-cart .entry-header, .storefront-full-width-content.woocommerce-checkout .entry-header {
+    padding-bottom: 1.5em; }
   /*****************************
 *****************************
 CART STYLES
@@ -1336,12 +1339,23 @@ CART STYLES
       display: -ms-flexbox;
       display: flex;
       -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
       body.woocommerce-cart .col-full .entry-content .woocommerce .woocommerce-message {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99999;
         margin-bottom: 2%;
         clear: none; }
+        body.woocommerce-cart .col-full .entry-content .woocommerce .woocommerce-message:before, body.woocommerce-cart .col-full .entry-content .woocommerce .woocommerce-message:after {
+          display: none; }
+        body.woocommerce-cart .col-full .entry-content .woocommerce .woocommerce-message a {
+          text-decoration: underline; }
       body.woocommerce-cart .col-full .entry-content .woocommerce form.woocommerce-cart-form:before, body.woocommerce-cart .col-full .entry-content .woocommerce form.woocommerce-cart-form:after {
         display: none; }
       body.woocommerce-cart .col-full .entry-content .woocommerce .cart-collaterals {

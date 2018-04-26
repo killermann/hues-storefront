@@ -191,32 +191,40 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
      </section>
 <?php } }
 
- add_action('storefront_before_footer','get_footer_hero');
+add_action('storefront_before_footer','get_footer_hero');
 
 function get_about_list() {?>
     <section class="faq-list wrap">
         <div class="faq light-orange">
             <h3 aria-hidden="true">
-                <i class="fa fa-user"></i>
+                <i class="fa fa-truck"></i>
             </h3>
             <p>
-                This is the explanation of the title. Let's do this!
+                <strong>Free US Shipping on orders over $50.</strong> Don't like paying for shipping? Neither do I. It's a principles thing.
             </p>
         </div>
         <div class="faq pink">
             <h3 aria-hidden="true">
-                <i class="fa fa-key"></i>
+                <i class="fa fa-recycle"></i>
             </h3>
             <p>
-                <strong>Only the best.</strong> This is the explanation <a href="">of the title</a>. Let's try a longer one. Maybe three sentences?
+                <strong>Ethical, sustainable, sweatshop-free supply chain.</strong> From the sourcing of the cotton to the final printing, everything is on the up-and-up, with carbon offsetting to boot.
             </p>
         </div>
-        <div class="faq">
+        <div class="light-blue faq">
             <h3 aria-hidden="true">
-                <i class="fa fa-key"></i>
+                <i class="fa fa-cc-paypal"></i>
             </h3>
             <p>
-                <strong>Only the best.</strong> This is the explanation <a href="">of the title</a>. Let's try a longer one. Maybe three sentences?
+                <strong>PayPal &amp; all major credit cards accepted.</strong> Don't want to make <em>another</em> account? No need. Check out in a breeze with safe, secure, forever-trusted PayPal.
+            </p>
+        </div>
+        <div class="teal faq">
+            <h3 aria-hidden="true">
+                <i class="fa fa-rebel"></i>
+            </h3>
+            <p>
+                <strong>Indepently run, supporting social justice.</strong> This is a one-person rebellion, and any money raised here supports my work that reaches hundreds of millions of people around the world.
             </p>
         </div>
     </section>
@@ -269,7 +277,7 @@ function get_store_primer() {?>
         <li class="pink">
             <i class="fa fa-fw fa-recycle fa-pull-right fa-2x"></i>
             <strong>Ethical &amp; Sustainable</strong>
-            <span>sweatshop free supply chain</span>
+            <span>sweatshop-free supply chain</span>
         </li>
         <li class="light-blue">
             <i class="fa fa-fw fa-cc-paypal fa-pull-right fa-2x"></i>
@@ -277,7 +285,7 @@ function get_store_primer() {?>
             <span>+ all major credit cards</span>
         </li>
         <li class="teal">
-            <i class="fa fa-fw fa-hand-spock-o fa-pull-right fa-2x"></i>
+            <i class="fa fa-fw fa-rebel fa-pull-right fa-2x"></i>
             <strong>Indepently Run</strong>
             <span>supporting social justice</span>
         </li>
