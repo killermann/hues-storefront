@@ -17,6 +17,9 @@ html {
 	}
 }
 
+.mobileHide {
+	display:block;
+}
 /*****************************
 CART STYLES
 *****************************/
@@ -32,7 +35,7 @@ body.woocommerce-cart {
 				flex-wrap:nowrap;
 				justify-content: center;
 
-				.woocommerce-message {
+				.woocommerce-message, .woocommerce-info, .woocommerce-error {
 					flex-basis:100%;
 					position:fixed;
 					bottom:0;

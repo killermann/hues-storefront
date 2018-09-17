@@ -30,6 +30,17 @@ $grey: 				#9c9c9c;
 .bg--purple {background-color:$purple}
 .bg--teal {background-color:$teal}
 
+.blue {color:$blue}
+.light-blue {color:$light-blue}
+.green {color:$green}
+.yellow {color:$yellow}
+.orange {color:$orange}
+.light-orange {color:$light-orange;}
+.red {color:$red}
+.pink {color:$pink}
+.purple {color:$purple}
+.teal {color:$teal}
+
 
 $color--primary: 	$teal;
 $color--accent: 	$pink;
@@ -37,8 +48,6 @@ $color--accent: 	$pink;
 $sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 
 $serif: Georgia, serif;
-
-$theme-font: /*iOS*/"AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", /*MacOSX*/HelveticaNeue-CondensedBold, /*Ubuntu*/ "Ubuntu Condensed", "Liberation Sans Narrow",  /*Windows*/"Franklin Gothic Demi Cond", "Arial Narrow", /*Android*/sans-serif-condensed, /*Fallback*/Arial, "Trebuchet MS", "Lucida Grande", Tahoma, Verdana, sans-serif;
 
 %hues-clip {
 	background-color:$color--primary;

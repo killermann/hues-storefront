@@ -19,6 +19,8 @@ function sf_child_theme_dequeue_style() {
     wp_dequeue_style( 'storefront-woocommerce-style' );
 }
 
+add_post_type_support( 'page', 'excerpt' );
+
 /**
  * Note: DO NOT! alter or remove the code above this text and only add your custom PHP functions below this text.
  */
@@ -40,7 +42,7 @@ function sf_child_theme_dequeue_style() {
      return 'full';
  } );
 
-// REMOVE DEFAULT GOOGLE FontAwesome
+// REMOVE DEFAULT GOOGLE FONTS
 function dequeue_default_google_fonts() {
     wp_dequeue_style( 'storefront-fonts');
 }
@@ -61,7 +63,6 @@ function remove_storefront_sidebar() {
 
 add_action( 'get_header', 'remove_storefront_sidebar' );
 
-
 function rearrange_storefront_header() {
     remove_action( 'storefront_header', 'storefront_header_cart', 60 );
     remove_action( 'storefront_header', 'storefront_product_search', 40 );
@@ -81,7 +82,7 @@ add_action( 'init', 'z_remove_wc_breadcrumbs');
 
 function woo_remove_product_tabs( $tabs ) {
 
-    unset( $tabs['description'] );      	// Remove the description tab
+    // unset( $tabs['description'] );      	// Remove the description tab
     unset( $tabs['reviews'] ); 			// Remove the reviews tab
     unset( $tabs['additional_information'] );  	// Remove the additional information tab
 
@@ -95,6 +96,23 @@ function remove_pgz_theme_support() {
     remove_theme_support( 'wc-product-gallery-zoom' );
 }
 add_action( 'after_setup_theme', 'remove_pgz_theme_support', 100 );
+
+// Custom Admin Styles
+
+function hues_login_css() {
+	wp_enqueue_style( 'hues_login_css', get_stylesheet_directory_uri() . '/login.css', false );
+}
+
+// changing the logo link from wordpress.org to your site
+function hues_login_url() {  return home_url(); }
+
+// changing the alt text on the logo to show your site name
+function hues_login_title() { return get_option('blogname'); }
+
+// calling it only on the login page
+add_action( 'login_enqueue_scripts', 'hues_login_css', 10 );
+add_filter('login_headerurl', 'hues_login_url');
+add_filter('login_headertitle', 'hues_login_title');
 
 
  // Load Custom JavaScript via Child Theme
@@ -145,7 +163,7 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
  				'columns' => 3,
  				'orderby' => 'date',
  				'order'   => 'desc',
- 				'title'   => __( '<i class="fa fa-thermometer-three-quarters"></i> Hot &amp; Fresh <i class="fa fa-hand-spock-o"></i>', 'storefront' ),
+ 				'title'   => __( '<i class="far fa fa-thermometer-three-quarters"></i> Hot &amp; Fresh <i class="far fa fa-hand-spock-o"></i>', 'storefront' ),
  			) );
 
  			echo '<section class="storefront-product-section storefront-featured-products" aria-label="Featured Products">';
@@ -180,11 +198,11 @@ add_action( 'wp_head', 'remove_homepage_hooks' );
         </div>
         <ul class="wrap">
             <li>
-                <a href="" class="button">Become a Member</a>
-                <span><a href="" alt="">View benefits</a></span>
+                <a href="https://hues.xyz/members" title="Become a member and get exclusive stuff" class="button">Become a Member</a>
+                <span><a href="https://hues.xyz/members/#benefits" title="View Membership Benefits">View benefits</a></span>
             </li>
             <li>
-                <a href="" class="button button-secondary">Join Mailing List</a>
+                <a href="https://hues.xyz/#MailingList" class="button button-secondary">Join Mailing List</a>
             </li>
         </ul>
 
@@ -197,7 +215,7 @@ function get_about_list() {?>
     <section class="faq-list wrap">
         <div class="faq light-orange">
             <h3 aria-hidden="true">
-                <i class="fa fa-truck"></i>
+                <i class="far fa fa-truck"></i>
             </h3>
             <p>
                 <strong>Free US Shipping on orders over $50.</strong> Don't like paying for shipping? Neither do I. It's a principles thing.
@@ -205,7 +223,7 @@ function get_about_list() {?>
         </div>
         <div class="faq pink">
             <h3 aria-hidden="true">
-                <i class="fa fa-recycle"></i>
+                <i class="far fa fa-recycle"></i>
             </h3>
             <p>
                 <strong>Ethical, sustainable, sweatshop-free supply chain.</strong> From the sourcing of the cotton to the final printing, everything is on the up-and-up, with carbon offsetting to boot.
@@ -213,7 +231,7 @@ function get_about_list() {?>
         </div>
         <div class="light-blue faq">
             <h3 aria-hidden="true">
-                <i class="fa fa-cc-paypal"></i>
+                <i class="fa fab fa-cc-paypal"></i>
             </h3>
             <p>
                 <strong>PayPal &amp; all major credit cards accepted.</strong> Don't want to make <em>another</em> account? No need. Check out in a breeze with safe, secure, forever-trusted PayPal.
@@ -221,7 +239,7 @@ function get_about_list() {?>
         </div>
         <div class="teal faq">
             <h3 aria-hidden="true">
-                <i class="fa fa-rebel"></i>
+                <i class="fab fa fa-rebel"></i>
             </h3>
             <p>
                 <strong>Indepently run, supporting social justice.</strong> This is a one-person rebellion, and any money raised here supports my work that reaches hundreds of millions of people around the world.
@@ -229,8 +247,6 @@ function get_about_list() {?>
         </div>
     </section>
 <?php }
-
-add_post_type_support( 'page', 'excerpt' );
 
 function loop_child_pages() {
     if (is_page()) {
@@ -268,43 +284,99 @@ add_action ('storefront_before_footer', 'loop_child_pages');
 // Below Header Message
 
 function get_store_primer() {?>
-    <ul id="storePrimer">
-        <li class="light-orange">
-            <i class="fa fa-fw fa-truck fa-pull-right fa-2x"></i>
-            <strong>Free US Shipping</strong>
-            <span>on orders over $50</span>
-        </li>
-        <li class="pink">
-            <i class="fa fa-fw fa-recycle fa-pull-right fa-2x"></i>
-            <strong>Ethical &amp; Sustainable</strong>
-            <span>sweatshop-free supply chain</span>
-        </li>
-        <li class="light-blue">
-            <i class="fa fa-fw fa-cc-paypal fa-pull-right fa-2x"></i>
-            <strong>PayPal Accepted</strong>
-            <span>+ all major credit cards</span>
-        </li>
-        <li class="teal">
-            <i class="fa fa-fw fa-rebel fa-pull-right fa-2x"></i>
-            <strong>Indepently Run</strong>
-            <span>supporting social justice</span>
-        </li>
-    </ul>
+    <div class="mobileHide">
+        <ul id="storePrimer">
+            <li class="light-orange">
+                <i class="far fa fa-fw fa-truck fa-pull-right fa-2x"></i>
+                <strong>Free US Shipping</strong>
+                <span>on orders over $50</span>
+            </li>
+            <li class="pink">
+                <i class="far fa fa-fw fa-recycle fa-pull-right fa-2x"></i>
+                <strong>Ethical &amp; Sustainable</strong>
+                <span>sweatshop-free supply chain</span>
+            </li>
+            <li class="light-blue">
+                <i class="fab fa fa-fw fa-cc-paypal fa-pull-right fa-2x"></i>
+                <strong>PayPal Accepted</strong>
+                <span>+ all major credit cards</span>
+            </li>
+            <li class="teal">
+                <i class="far fa fa-fw fa-rebel fa-pull-right fa-2x"></i>
+                <strong>Indepently Run</strong>
+                <span>supporting social justice</span>
+            </li>
+        </ul>
+    </div><!--/mobileHide-->
 <?php }
 
 add_action ('storefront_before_content','get_store_primer');
 
- // Remove "Storefront Designed by WooThemes" from Footer
+// Remove "Storefront Designed by WooThemes" from Footer
 
- add_action( 'init', 'custom_remove_footer_credit', 10 );
- function custom_remove_footer_credit () {
-     remove_action( 'storefront_footer', 'storefront_credit', 20 );
- }
-
-// Adding Buttons to Products
-function add_buttons_to_products() {?>
-    <div class="fb-save" data-uri="<?php global $wp; $current_url = home_url(add_query_arg(array(),$wp->request));?>" data-size="large"></div>ASDF
-    <?php
+add_action( 'init', 'custom_remove_footer_credit', 10 );
+function custom_remove_footer_credit () {
+    remove_action( 'storefront_footer', 'storefront_credit', 20 );
 }
 
-add_action('storefront_post_content_before','add_buttons_to_products', 100);
+// Limit Members Only WooCommerce Category to Patreon Patrons
+
+function restrict_members_only_products_to_patrons() {
+
+    // set the slug of the category for which we disallow checkout
+	$category = 'members-only';
+
+    // get the product category
+	$product_cat = get_term_by( 'slug', $category, 'product_cat' );
+
+    // sanity check to prevent fatals if the term doesn't exist
+	if ( is_wp_error( $product_cat ) ) {
+		return;
+	}
+
+	// check if this category is the only thing in the cart
+	if ( check_if_user_is_not_patron() ) {
+
+        if ( is_category_in_cart( $category ) ) {
+
+    		// render a notice to explain why checkout is blocked
+    		wc_add_notice( sprintf( 'Hi there! Looks like your cart contains something that is only for members. You can sign up to be a member right now on <a href="https://patreon.com/killermann" title="Become a member on Patreon">Patreon</a> and we will be all set, otherwise you will need to remove that item from your cart to check out.'), 'error' );
+        }
+	}
+}
+
+function check_if_user_is_not_patron() {
+
+    $user_patronage = Patreon_Wordpress::getUserPatronage();
+
+    if ( $user_patronage >= 1 ) {
+		return false;
+	}
+
+    return true;
+}
+
+function is_category_in_cart($category) {
+    // check each cart item for our category
+    foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
+
+        // if a product is not in our category, bail out since we know the category is not alone
+        if ( has_term( $category, 'product_cat', $cart_item['data']->id ) ) {
+            return true;
+        }
+    }
+}
+
+add_action( 'woocommerce_check_cart_items', 'restrict_members_only_products_to_patrons' );
+
+/**
+ * Allow HTML in term (category, tag) descriptions
+ */
+foreach ( array( 'pre_term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_filter_kses' );
+}
+
+foreach ( array( 'term_description' ) as $filter ) {
+    remove_filter( $filter, 'wp_kses_data' );
+}
+?>

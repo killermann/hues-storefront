@@ -1,0 +1,144 @@
+/******************************************************************
+
+Stylesheet: Login Stylesheet
+
+******************************************************************/
+body.login {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  background-color: white; }
+  body.login .privacy-policy-page-link {
+    margin: .5em auto; }
+
+#login {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 340px;
+  max-width: 95%;
+  padding: 2vw 0 4vw;
+  margin: 0 auto;
+  position: relative; }
+  #login h1 {
+    margin: 30px auto; }
+    #login h1 a {
+      display: inline-block;
+      height: 80px;
+      width: 160px;
+      text-indent: -999999px;
+      overflow: hidden;
+      background-position: center;
+      background-image: url(inc/img/hues-store-logo.svg);
+      background-repeat: no-repeat;
+      background-size: contain; }
+  #login form {
+    margin: 0 auto;
+    font-weight: normal;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: white;
+    position: relative;
+    padding: 20px;
+    -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+    /* login button*/ }
+    #login form:before {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      height: 5px;
+      background-image: url(inc/img/hues-colors-border.svg) !important;
+      background-repeat: repeat-x;
+      background-size: 800px 40px;
+      background-position: center -35px; }
+    #login form input[type=text], #login form input[type=password], #login form input[type=email] {
+      border: 1px solid white;
+      padding: .5rem 1em;
+      line-height: 1;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
+    #login form input[type=checkbox] {
+      border-radius: 2px;
+      border: 3px solid transparent;
+      width: 20px;
+      height: 20px;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+      -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); }
+      #login form input[type=checkbox]:hover, #login form input[type=checkbox]:active {
+        border-color: #3FA9F5; }
+      #login form input[type=checkbox]:checked:before {
+        content: "\f147";
+        margin: -3px 0 0 -4px;
+        color: #67c2e7;
+        font-size: 22px; }
+    #login form label {
+      color: rgba(0, 0, 0, 0.7);
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.2; }
+    #login form p.forgetmenot {
+      margin-bottom: 16px; }
+    #login form #wp-submit {
+      border: none;
+      padding: .7em 1.2em;
+      display: inline-block;
+      font-size: 18px;
+      height: auto;
+      width: 100%;
+      text-shadow: none;
+      color: rgba(0, 0, 0, 0.7);
+      background: #e81d76;
+      color: #fff;
+      letter-spacing: .07em;
+      line-height: 1;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer; }
+      #login form #wp-submit:hover, #login form #wp-submit:focus {
+        background: #e92b7e; }
+      #login form #wp-submit:active {
+        background: #e81d76;
+        text-shadow: none;
+        -webkit-box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: inset 0 1px 1px 0 rgba(0, 0, 0, 0.5); }
+      #login form #wp-submit.button-wide {
+        width: 100%;
+        text-align: center; }
+  #login #nav, #login #backtoblog {
+    text-align: center; }
+    #login #nav a:hover, #login #backtoblog a:hover {
+      text-decoration: underline; }
+  #login p.message, #login #login_error {
+    border: none;
+    border-radius: 5px;
+    background: #fff339;
+    border: none;
+    border-radius: 5px;
+    max-width: 320px;
+    margin: 20px auto;
+    font-size: 16px; }
+    #login p.message a, #login #login_error a {
+      color: #000; }
+    #login p.message.register, #login #login_error.register {
+      background-color: #0a76c4;
+      color: #fff; }
+  #login #reg_passmail, #login p.description {
+    border: none;
+    border-radius: 5px;
+    border: none;
+    border-radius: 5px;
+    max-width: 320px;
+    margin: 5px auto 0;
+    font-size: 16px;
+    line-height: 1.3; }
+  #login #login_error {
+    background: #ff2325;
+    color: #fff; }
+
+/* the form box */
